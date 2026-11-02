@@ -1,5 +1,7 @@
 import Cabecalho from "./components/cabecalho";
+import CartaoDica from "./components/cartaoDica";
 import Rodape from "./components/rodape";
+import { dicas } from "./data/dicas";
 
 function App() {
   return (
@@ -10,38 +12,9 @@ function App() {
         <section className="mt-6">
           <h2 className="text-xl font-semibold">• Dicas de Cuidados Diários</h2>
           <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-3">
-            {/* Alimentação */}
-            <article className="rounded-xl border border-purple-200 bg-purple-50 p-4">
-              <h3 className="flex items-center gap-2 font-semibold">
-                <span className="text-xl">❤️</span>
-                Alimentação
-              </h3>
-              <p className="mt-2 text-sm text-gray-700">
-                Proporcionar uma alimentação balanceada e adequada para a espécie e idade do animal é fundamental para sua saúde e bem-estar.
-              </p>
-            </article>
-
-            {/* Higiene */}
-            <article className="rounded-xl border border-purple-200 bg-purple-50 p-4">
-              <h3 className="flex items-center gap-2 font-semibold">
-                <span className="text-xl">🐾</span>
-                Higiene
-              </h3>
-              <p className="mt-2 text-sm text-gray-700">
-                Manter o animal limpo e saudável é essencial para prevenir doenças e promover seu bem-estar.
-              </p>
-            </article>
-
-            {/* Brincadeiras */}
-            <article className="rounded-xl border border-purple-200 bg-purple-50 p-4">
-              <h3 className="flex items-center gap-2 font-semibold">
-                <span className="text-xl">⚽</span>
-                Brincadeiras
-              </h3>
-              <p className="mt-2 text-sm text-gray-700">
-                Proporcionar brincadeiras e atividades físicas é importante para o bem-estar emocional e físico do animal.
-              </p>
-            </article>
+            {dicas.map((dica) => (
+              <CartaoDica key={dica.id} dica={dica} />
+            ))}
           </div>
         </section>
 
@@ -77,7 +50,8 @@ function App() {
               />
               <h3 className="mt-3 font-semibold">Neguinho</h3>
               <p className="flex-1 text-sm text-gray-700">
-                Extremamente leal e companheiro, adora receber carinho e se dá muito bem com crianças.
+                Extremamente leal e companheiro, adora receber carinho e se dá
+                muito bem com crianças.
               </p>
               <div className="mt-3 flex items-center justify-between">
                 <span className="text-sm">3 anos</span>
@@ -96,7 +70,8 @@ function App() {
               />
               <h3 className="mt-3 font-semibold">Luna</h3>
               <p className="flex-1 text-sm text-gray-700">
-                Elegante, silenciosa e muito afetuosa, prefere ambientes calmos e rotina tranquila.
+                Elegante, silenciosa e muito afetuosa, prefere ambientes calmos
+                e rotina tranquila.
               </p>
               <div className="mt-3 flex items-center justify-between">
                 <span className="text-sm">1 ano</span>
@@ -115,7 +90,8 @@ function App() {
               />
               <h3 className="mt-3 font-semibold">Piu-Piu</h3>
               <p className="flex-1 text-sm text-gray-700">
-                Muito mansa, alegre e interativa, adora assobiar músicas e ficar no ombro das pessoas.
+                Muito mansa, alegre e interativa, adora assobiar músicas e ficar
+                no ombro das pessoas.
               </p>
               <div className="mt-3 flex items-center justify-between">
                 <span className="text-sm">1 ano</span>
@@ -134,7 +110,8 @@ function App() {
               />
               <h3 className="mt-3 font-semibold">Paçoca</h3>
               <p className="flex-1 text-sm text-gray-700">
-                O clássico vira-lata caramelo cheio de energia, brincalhão e muito sociável com todos.
+                O clássico vira-lata caramelo cheio de energia, brincalhão e
+                muito sociável com todos.
               </p>
               <div className="mt-3 flex items-center justify-between">
                 <span className="text-sm">1 ano e 6 meses</span>
@@ -153,7 +130,8 @@ function App() {
               />
               <h3 className="mt-3 font-semibold">Simba</h3>
               <p className="flex-1 text-sm text-gray-700">
-                Gato laranja extremamente sociável, calmo e que adora pedir carinho com cabeçadas.
+                Gato laranja extremamente sociável, calmo e que adora pedir
+                carinho com cabeçadas.
               </p>
               <div className="mt-3 flex items-center justify-between">
                 <span className="text-sm">4 anos</span>
@@ -172,7 +150,8 @@ function App() {
               />
               <h3 className="mt-3 font-semibold">Thor</h3>
               <p className="flex-1 text-sm text-gray-700">
-                Calmo, protetor e obediente, é um gigante gentil que adora sonecas e carinho.
+                Calmo, protetor e obediente, é um gigante gentil que adora
+                sonecas e carinho.
               </p>
               <div className="mt-3 flex items-center justify-between">
                 <span className="text-sm">5 anos</span>
@@ -191,7 +170,8 @@ function App() {
               />
               <h3 className="mt-3 font-semibold">Amora</h3>
               <p className="flex-1 text-sm text-gray-700">
-                Filhotinha tricolor super carinhosa, mansa e brincalhona, que ronrona só de chegar perto.
+                Filhotinha tricolor super carinhosa, mansa e brincalhona, que
+                ronrona só de chegar perto.
               </p>
               <div className="mt-3 flex items-center justify-between">
                 <span className="text-sm">3 meses</span>
@@ -210,7 +190,8 @@ function App() {
               />
               <h3 className="mt-3 font-semibold">Blue</h3>
               <p className="flex-1 text-sm text-gray-700">
-                Periquito muito sociável, tagarela e inteligente, que fica super feliz com música.
+                Periquito muito sociável, tagarela e inteligente, que fica super
+                feliz com música.
               </p>
               <div className="mt-3 flex items-center justify-between">
                 <span className="text-sm">1 ano e 2 meses</span>
@@ -229,7 +210,8 @@ function App() {
               />
               <h3 className="mt-3 font-semibold">Bobi</h3>
               <p className="flex-1 text-sm text-gray-700">
-                Filhote muito dócil, companheiro e esperto, que adora brincar no quintal e pedir colo.
+                Filhote muito dócil, companheiro e esperto, que adora brincar no
+                quintal e pedir colo.
               </p>
               <div className="mt-3 flex items-center justify-between">
                 <span className="text-sm">6 meses</span>
@@ -248,7 +230,8 @@ function App() {
               />
               <h3 className="mt-3 font-semibold">Frajola</h3>
               <p className="flex-1 text-sm text-gray-700">
-                Curioso, ágil e muito divertido, adora brincar e dormir encostadinho quando cansa.
+                Curioso, ágil e muito divertido, adora brincar e dormir
+                encostadinho quando cansa.
               </p>
               <div className="mt-3 flex items-center justify-between">
                 <span className="text-sm">8 meses</span>
@@ -267,7 +250,8 @@ function App() {
               />
               <h3 className="mt-3 font-semibold">Pipoca</h3>
               <p className="flex-1 text-sm text-gray-700">
-                Filhote curiosa, esperta e carinhosa, perfeita para quem mora em apartamento.
+                Filhote curiosa, esperta e carinhosa, perfeita para quem mora em
+                apartamento.
               </p>
               <div className="mt-3 flex items-center justify-between">
                 <span className="text-sm">4 meses</span>
@@ -286,7 +270,8 @@ function App() {
               />
               <h3 className="mt-3 font-semibold">Miminha</h3>
               <p className="flex-1 text-sm text-gray-700">
-                Muito meiga, tranquila e apegada, adora ronronar no colo e tomar sol na janela.
+                Muito meiga, tranquila e apegada, adora ronronar no colo e tomar
+                sol na janela.
               </p>
               <div className="mt-3 flex items-center justify-between">
                 <span className="text-sm">2 anos</span>
@@ -300,7 +285,6 @@ function App() {
       </main>
 
       <Rodape />
-      
     </div>
   );
 }
