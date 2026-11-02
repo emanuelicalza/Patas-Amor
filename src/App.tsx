@@ -10,6 +10,7 @@ import type { Filtro } from "./data/tipos";
 
 function App() {
   const [filtro, setFiltro] = useState<Filtro>("todos");
+  const [escuro, setEscuro] = useState(false);
 
   const animaisVisiveis =
     filtro === "todos"
@@ -17,8 +18,10 @@ function App() {
       : animais.filter((animal) => animal.especie === filtro);
 
   return (
-    <div className="min-h-screen bg-white text-gray-900">
-      <Cabecalho />
+    <div
+      className={`min-h-screen bg-white text-gray-900 ${escuro ? "dark" : ""}`}
+    >
+      <Cabecalho escuro={escuro} aoAlternar={() => setEscuro(!escuro)} />
 
       <main className="mx-auto max-w-5xl px-4 pb-16">
         <section className="mt-6">
