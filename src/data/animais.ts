@@ -6,7 +6,7 @@ export const animais: Animal[] = [
     nome: 'Neguinho',
     descricao: 'Extremamente leal e companheiro, adora receber carinho e se dá muito bem com crianças.',
     idade: '3 anos',
-    imagem: '/animais/neguinho.png',
+    imagem: 'animais/neguinho.png',
     especie: 'cachorro',
   },
   {
@@ -14,7 +14,7 @@ export const animais: Animal[] = [
     nome: 'Luna',
     descricao: 'Elegante, silenciosa e muito afetuosa, prefere ambientes calmos e rotina tranquila.',
     idade: '1 ano',
-    imagem: '/animais/luna.png',
+    imagem: 'animais/luna.png',
     especie: 'gato',
   },
   {
@@ -22,7 +22,7 @@ export const animais: Animal[] = [
     nome: 'Piu-Piu',
     descricao: 'Muito mansa, alegre e interativa, adora assobiar músicas e ficar no ombro das pessoas.',
     idade: '1 ano',
-    imagem: '/animais/piu-piu.png',
+    imagem: 'animais/piu-piu.png',
     especie: 'outro',
   },
   {
@@ -30,7 +30,7 @@ export const animais: Animal[] = [
     nome: 'Paçoca',
     descricao: 'O clássico vira-lata caramelo cheio de energia, brincalhão e muito sociável com todos.',
     idade: '1 ano e 6 meses',
-    imagem: '/animais/pacoca.png',
+    imagem: 'animais/pacoca.png',
     especie: 'cachorro',
   },
   {
@@ -38,7 +38,7 @@ export const animais: Animal[] = [
     nome: 'Simba',
     descricao: 'Gato laranja extremamente sociável, calmo e que adora pedir carinho com cabeçadas.',
     idade: '4 anos',
-    imagem: '/animais/simba.png',
+    imagem: 'animais/simba.png',
     especie: 'gato',
   },
   {
@@ -46,7 +46,7 @@ export const animais: Animal[] = [
     nome: 'Thor',
     descricao: 'Calmo, protetor e obediente, é um gigante gentil que adora sonecas e carinho.',
     idade: '5 anos',
-    imagem: '/animais/thor.png',
+    imagem: 'animais/thor.png',
     especie: 'cachorro',
   },
   {
@@ -54,7 +54,7 @@ export const animais: Animal[] = [
     nome: 'Amora',
     descricao: 'Filhotinha tricolor super carinhosa, mansa e brincalhona, que ronrona só de chegar perto.',
     idade: '3 meses',
-    imagem: '/animais/amora.png',
+    imagem: 'animais/amora.png',
     especie: 'gato',
   },
   {
@@ -62,7 +62,7 @@ export const animais: Animal[] = [
     nome: 'Blue',
     descricao: 'Periquito muito sociável, tagarela e inteligente, que fica super feliz com música.',
     idade: '1 ano e 2 meses',
-    imagem: '/animais/blue.png',
+    imagem: 'animais/blue.png',
     especie: 'outro',
   },
   {
@@ -70,7 +70,7 @@ export const animais: Animal[] = [
     nome: 'Bobi',
     descricao: 'Filhote muito dócil, companheiro e esperto, que adora brincar no quintal e pedir colo.',
     idade: '6 meses',
-    imagem: '/animais/bobi.png',
+    imagem: 'animais/bobi.png',
     especie: 'cachorro',
   },
   {
@@ -78,7 +78,7 @@ export const animais: Animal[] = [
     nome: 'Frajola',
     descricao: 'Curioso, ágil e muito divertido, adora brincar e dormir encostadinho quando cansa.',
     idade: '8 meses',
-    imagem: '/animais/frajola.png',
+    imagem: 'animais/frajola.png',
     especie: 'gato',
   },
   {
@@ -86,7 +86,7 @@ export const animais: Animal[] = [
     nome: 'Pipoca',
     descricao: 'Filhote curiosa, esperta e carinhosa, perfeita para quem mora em apartamento.',
     idade: '4 meses',
-    imagem: '/animais/pipoca.png',
+    imagem: 'animais/pipoca.png',
     especie: 'cachorro',
   },
   {
@@ -94,7 +94,7 @@ export const animais: Animal[] = [
     nome: 'Miminha',
     descricao: 'Muito meiga, tranquila e apegada, adora ronronar no colo e tomar sol na janela.',
     idade: '2 anos',
-    imagem: '/animais/miminha.png',
+    imagem: 'animais/miminha.png',
     especie: 'gato',
   },
 ]

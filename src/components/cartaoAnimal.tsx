@@ -8,7 +8,7 @@ function CartaoAnimal({ animal }: Props) {
   return (
     <article className="flex flex-col rounded-xl border border-purple-200 bg-purple-50 p-4 dark:border-purple-800 dark:bg-purple-950">
       <img
-        src={animal.imagem}
+        src={import.meta.env.BASE_URL + animal.imagem}
         alt={`Foto de ${animal.nome}`}
         className="aspect-[3/2] w-full rounded-lg object-cover"
       />
