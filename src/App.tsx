@@ -1,9 +1,10 @@
+import Cabecalho from "./components/cabecalho";
+import Rodape from "./components/rodape";
+
 function App() {
   return (
     <div className="min-h-screen bg-white text-gray-900">
-      <header className="border-b border-purple-300 bg-purple-200 py-2 text-center text-lg font-semibold shadow-sm">
-        🐾 Patas &amp; Amor - Adoção de Animais
-      </header>
+      <Cabecalho />
 
       <main className="mx-auto max-w-5xl px-4 pb-16">
         <section className="mt-6">
@@ -127,7 +128,7 @@ function App() {
             {/* Paçoca - cachorro */}
             <article className="flex flex-col rounded-xl border border-purple-200 bg-purple-50 p-4">
               <img
-                src="/animais/paçoca.png"
+                src="/animais/pacoca.png"
                 alt="Foto da Paçoca"
                 className="aspect-[3/2] w-full rounded-lg object-cover"
               />
@@ -298,15 +299,8 @@ function App() {
         </section>
       </main>
 
-      <footer className="border-t border-purple-300 bg-purple-200 py-3 text-center text-gray-900">
-        <h3 className="font-semibold leading-tight">Patas &amp; Amor</h3>
-        <p className="text-sm leading-tight text-gray-700">
-          Todo animal merece um lar cheio de amor.
-        </p>
-        <p className="mt-1 text-xs leading-tight text-gray-700">
-          © 2026 Patas &amp; Amor. Projeto TCD - Trabalho de Conclusão da Disciplina.
-        </p>
-      </footer>
+      <Rodape />
+      
     </div>
   );
 }
