@@ -16,7 +16,7 @@ function CartaoAnimal({ animal }: Props) {
       <p className="flex-1 text-sm text-gray-700">{animal.descricao}</p>
       <div className="mt-3 flex items-center justify-between">
         <span className="text-sm">{animal.idade}</span>
-        <button className="rounded-full border border-purple-400 px-4 py-1 text-sm hover:bg-purple-200">
+        <button className="rounded-full border border-purple-400 px-4 py-1 text-sm transition-colors duration-200 hover:bg-purple-200">
           Adotar
         </button>
       </div>
