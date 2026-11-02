@@ -30,8 +30,8 @@ function FiltroAnimais({ filtroAtual, aoMudar, quantidade }: Props) {
           <button
             key={opcao.valor}
             onClick={() => aoMudar(opcao.valor)}
-            className={`rounded-full border border-purple-300 px-3 py-1 text-sm transition-colors duration-200 hover:bg-purple-200 ${
-              filtroAtual === opcao.valor ? 'bg-purple-200' : ''
+            className={`rounded-full border border-purple-300 px-3 py-1 text-sm transition-colors duration-200 hover:bg-purple-200 dark:border-purple-700 dark:hover:bg-purple-800 ${
+              filtroAtual === opcao.valor ? 'bg-purple-200 dark:bg-purple-800' : ''
             }`}
           >
             {opcao.rotulo}
@@ -39,7 +39,7 @@ function FiltroAnimais({ filtroAtual, aoMudar, quantidade }: Props) {
         ))}
       </div>
 
-      <p className="text-sm text-gray-700" aria-live="polite">
+      <p className="text-sm text-gray-700 dark:text-gray-300" aria-live="polite">
         {quantidade} {quantidade === 1 ? singular : plural}
       </p>
     </div>

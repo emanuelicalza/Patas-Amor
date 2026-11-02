@@ -1,25 +1,27 @@
-import { useState } from "react";
-import Cabecalho from "./components/cabecalho";
-import Rodape from "./components/rodape";
-import CartaoDica from "./components/cartaoDica";
-import CartaoAnimal from "./components/cartaoAnimal";
-import FiltroAnimais from "./components/filtroAnimais";
-import { dicas } from "./data/dicas";
-import { animais } from "./data/animais";
-import type { Filtro } from "./data/tipos";
+import { useState } from 'react'
+import Cabecalho from './components/Cabecalho'
+import Rodape from './components/Rodape'
+import CartaoDica from './components/CartaoDica'
+import CartaoAnimal from './components/CartaoAnimal'
+import FiltroAnimais from './components/FiltroAnimais'
+import { dicas } from './data/dicas'
+import { animais } from './data/animais'
+import type { Filtro } from './data/tipos'
 
 function App() {
-  const [filtro, setFiltro] = useState<Filtro>("todos");
-  const [escuro, setEscuro] = useState(false);
+  const [filtro, setFiltro] = useState<Filtro>('todos')
+  const [escuro, setEscuro] = useState(false)
 
   const animaisVisiveis =
-    filtro === "todos"
+    filtro === 'todos'
       ? animais
-      : animais.filter((animal) => animal.especie === filtro);
+      : animais.filter((animal) => animal.especie === filtro)
 
   return (
     <div
-      className={`min-h-screen bg-white text-gray-900 ${escuro ? "dark" : ""}`}
+      className={`min-h-screen bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 ${
+        escuro ? 'dark' : ''
+      }`}
     >
       <Cabecalho escuro={escuro} aoAlternar={() => setEscuro(!escuro)} />
 
@@ -50,7 +52,7 @@ function App() {
 
       <Rodape />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
