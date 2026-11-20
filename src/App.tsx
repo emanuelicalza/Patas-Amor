@@ -5,12 +5,13 @@ import CartaoDica from './components/cartaoDica'
 import CartaoAnimal from './components/cartaoAnimal'
 import FiltroAnimais from './components/filtroAnimais'
 import { dicas } from './data/dicas'
-import { animais } from './data/animais'
+import { useAnimais } from './hooks/useAnimais'
 import type { Filtro } from './data/tipos'
 
 function App() {
   const [filtro, setFiltro] = useState<Filtro>('todos')
   const [escuro, setEscuro] = useState(false)
+  const { animais } = useAnimais()
 
   const animaisVisiveis =
     filtro === 'todos'
