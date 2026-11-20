@@ -1,27 +1,27 @@
-import { useState } from 'react'
-import Cabecalho from './components/cabecalho'
-import Rodape from './components/rodape'
-import CartaoDica from './components/cartaoDica'
-import CartaoAnimal from './components/cartaoAnimal'
-import FiltroAnimais from './components/filtroAnimais'
-import { dicas } from './data/dicas'
-import { useAnimais } from './hooks/useAnimais'
-import type { Filtro } from './data/tipos'
+import { useState } from "react";
+import Cabecalho from "./components/cabecalho";
+import Rodape from "./components/rodape";
+import CartaoDica from "./components/cartaoDica";
+import CartaoAnimal from "./components/cartaoAnimal";
+import FiltroAnimais from "./components/filtroAnimais";
+import { dicas } from "./data/dicas";
+import { useAnimais } from "./hooks/useAnimais";
+import type { Filtro } from "./data/tipos";
 
 function App() {
-  const [filtro, setFiltro] = useState<Filtro>('todos')
-  const [escuro, setEscuro] = useState(false)
-  const { animais, carregando } = useAnimais()
+  const [filtro, setFiltro] = useState<Filtro>("todos");
+  const [escuro, setEscuro] = useState(false);
+  const { animais, carregando, erro } = useAnimais();
 
   const animaisVisiveis =
-    filtro === 'todos'
+    filtro === "todos"
       ? animais
-      : animais.filter((animal) => animal.especie === filtro)
+      : animais.filter((animal) => animal.especie === filtro);
 
   return (
     <div
       className={`min-h-screen bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 ${
-        escuro ? 'dark' : ''
+        escuro ? "dark" : ""
       }`}
     >
       <Cabecalho escuro={escuro} aoAlternar={() => setEscuro(!escuro)} />
@@ -50,7 +50,16 @@ function App() {
             </p>
           )}
 
-          {!carregando && (
+          {erro && (
+            <p
+              role="alert"
+              className="mt-6 rounded-lg border border-red-300 bg-red-50 p-4 text-center text-sm text-red-800 dark:border-red-800 dark:bg-red-950 dark:text-red-200"
+            >
+              {erro}
+            </p>
+          )}
+
+          {!carregando && !erro && (
             <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
               {animaisVisiveis.map((animal) => (
                 <CartaoAnimal key={animal.id} animal={animal} />
@@ -62,7 +71,7 @@ function App() {
 
       <Rodape />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
