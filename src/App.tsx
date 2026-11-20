@@ -11,7 +11,7 @@ import type { Filtro } from './data/tipos'
 function App() {
   const [filtro, setFiltro] = useState<Filtro>('todos')
   const [escuro, setEscuro] = useState(false)
-  const { animais } = useAnimais()
+  const { animais, carregando } = useAnimais()
 
   const animaisVisiveis =
     filtro === 'todos'
@@ -43,11 +43,20 @@ function App() {
             aoMudar={setFiltro}
             quantidade={animaisVisiveis.length}
           />
-          <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {animaisVisiveis.map((animal) => (
-              <CartaoAnimal key={animal.id} animal={animal} />
-            ))}
-          </div>
+
+          {carregando && (
+            <p className="mt-6 rounded-lg border border-purple-200 bg-purple-50 p-4 text-center text-sm dark:border-purple-800 dark:bg-purple-950">
+              Carregando animais...
+            </p>
+          )}
+
+          {!carregando && (
+            <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {animaisVisiveis.map((animal) => (
+                <CartaoAnimal key={animal.id} animal={animal} />
+              ))}
+            </div>
+          )}
         </section>
       </main>
 
