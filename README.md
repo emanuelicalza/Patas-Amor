@@ -1,36 +1,53 @@
 # Patas & Amor
 
-**Patas & Amor** é uma página de divulgação de animais para adoção, criada como projeto da disciplina de Desenvolvimento de Aplicações Web. A listagem principal apresenta os animais disponíveis, com foto, nome, descrição, idade e um botão para adotar, e pode ser filtrada por categoria (cachorros, gatos e outros). A listagem secundária reúne dicas de cuidados diários, como alimentação, higiene e brincadeiras, para ajudar quem pensa em adotar. A página é responsiva, com abordagem mobile first, e será desenvolvida com React, TypeScript e Tailwind CSS.
+**Patas & Amor** é uma página de divulgação de animais para adoção, criada como projeto da disciplina de Desenvolvimento de Aplicações Web. A listagem principal apresenta os animais disponíveis, com foto, nome, descrição, idade e um botão para adotar, e pode ser filtrada por categoria (cachorros, gatos e outros). A listagem secundária reúne dicas de cuidados diários, como alimentação, higiene e brincadeiras, para ajudar quem pensa em adotar. A página é responsiva, com abordagem mobile first, e foi desenvolvida com React, TypeScript e Tailwind CSS.
 
 ## Aplicação publicada
+
 https://emanuelicalza.github.io/Patas-Amor/
 
 ## Autor
+
 Emanueli Calza
 
-## Fase 1 
-Netrega dos wireframe mobile, tablet e desktop.
+## Como executar
 
-## Fase 2
+```bash
+npm install
+npm run dev
+```
 
-Construção da página inteira no `App.tsx`, fiel aos wireframes e responsiva (mobile first, com adaptações para tablet e desktop):
+Abra o endereço que aparecer no terminal.
 
-- Cabeçalho, seção de dicas de cuidados diários, filtros, listagem de 12 animais e rodapé.
-- Estrutura semântica com `header`, `main`, `section`, `article` e `footer`.
-- Estilização com Tailwind CSS, na paleta lilás.
-- Os cards das duas listagens foram escritos à mão no JSX.
+## Fonte dos dados
 
-## Fase 3
+- **Listagem principal (animais):** API criada no Mockaroo a partir de um dataset (`docs/animais.csv`), carregada com `fetch` dentro de `useEffect` (`src/services/animalService.ts` e `src/hooks/useAnimais.ts`). Enquanto os dados chegam, a página mostra "Carregando animais...", e se a requisição falhar mostra uma mensagem de erro.
+- **Listagem secundária (dicas):** vetor de objetos declarado em `src/data/dicas.ts`.
 
-Reorganização da página em componentes, dados e estado:
+## Fases
 
-- Componentes em `src/components/`: `Cabecalho`, `Rodape`, `CartaoDica`, `CartaoAnimal` e `FiltroAnimais`.
-- Types `Animal`, `Dica`, `Especie` e `Filtro` em `src/data/tipos.ts`, e vetores de objetos em `src/data/animais.ts` e `src/data/dicas.ts`.
-- As duas listagens são renderizadas com `map` e `key`, e as props de todos os componentes são tipadas.
-- Interação com `useState`: filtro de animais por espécie, com contador de animais exibidos.
-- O `App.tsx` guarda o estado e compõe os componentes.
+### Fase 1
 
-### Desafios bonificados
+Entrega dos wireframes mobile, tablet e desktop, na pasta `docs/`.
 
-- **Modo escuro:** chave no cabeçalho para alternar entre tema claro e escuro, controlada por estado e pelo `dark:` do Tailwind.
-- **Publicação:** aplicação publicada no GitHub Pages com GitHub Actions (link acima).
+### Fase 2
+
+Construção da página inteira no `App.tsx`, fiel aos wireframes e responsiva, com cabeçalho, dicas de cuidados, filtros, 12 animais e rodapé, em estrutura semântica.
+
+### Fase 3
+
+Reorganização em componentes (`src/components/`), types e vetores de objetos (`src/data/`), listagens com `map` e `key`, props tipadas e filtro por espécie com `useState`, com contador de animais exibidos.
+
+Desafios bonificados:
+
+- **Modo escuro:** chave no cabeçalho que alterna o tema, controlada por estado.
+- **Publicação:** aplicação publicada no GitHub Pages com GitHub Actions (`.github/workflows/deploy.yml`).
+
+### Fase 4
+
+Dados externos:
+
+- Listagem principal carregada da API do Mockaroo com `fetch` em `useEffect`, com o estado dos dados tipado (`useState<Animal[]>`).
+- Estados de **carregando** e de **erro** exibidos na interface.
+- Acesso aos dados separado em `src/services/` e `src/hooks/`.
+- Modal ao clicar em **Adotar**, controlado por estado (`animalSelecionado`).

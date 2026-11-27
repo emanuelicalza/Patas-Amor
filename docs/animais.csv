@@ -1,0 +1,13 @@
+id,nome,descricao,idade,imagem,especie
+1,Neguinho,"Extremamente leal e companheiro, adora receber carinho e se dá muito bem com crianças.",3 anos,animais/neguinho.png,cachorro
+2,Luna,"Elegante, silenciosa e muito afetuosa, prefere ambientes calmos e rotina tranquila.",1 ano,animais/luna.png,gato
+3,Piu-Piu,"Muito mansa, alegre e interativa, adora assobiar músicas e ficar no ombro das pessoas.",1 ano,animais/piu-piu.png,outro
+4,Paçoca,"O clássico vira-lata caramelo cheio de energia, brincalhão e muito sociável com todos.",1 ano e 6 meses,animais/pacoca.png,cachorro
+5,Simba,"Gato laranja extremamente sociável, calmo e que adora pedir carinho com cabeçadas.",4 anos,animais/simba.png,gato
+6,Thor,"Calmo, protetor e obediente, é um gigante gentil que adora sonecas e carinho.",5 anos,animais/thor.png,cachorro
+7,Amora,"Filhotinha tricolor super carinhosa, mansa e brincalhona, que ronrona só de chegar perto.",3 meses,animais/amora.png,gato
+8,Blue,"Periquito muito sociável, tagarela e inteligente, que fica super feliz com música.",1 ano e 2 meses,animais/blue.png,outro
+9,Bobi,"Filhote muito dócil, companheiro e esperto, que adora brincar no quintal e pedir colo.",6 meses,animais/bobi.png,cachorro
+10,Frajola,"Curioso, ágil e muito divertido, adora brincar e dormir encostadinho quando cansa.",8 meses,animais/frajola.png,gato
+11,Pipoca,"Filhote curiosa, esperta e carinhosa, perfeita para quem mora em apartamento.",4 meses,animais/pipoca.png,cachorro
+12,Miminha,"Muito meiga, tranquila e apegada, adora ronronar no colo e tomar sol na janela.",2 anos,animais/miminha.png,gato

@@ -4,13 +4,16 @@ import Rodape from './components/rodape'
 import CartaoDica from './components/cartaoDica'
 import CartaoAnimal from './components/cartaoAnimal'
 import FiltroAnimais from './components/filtroAnimais'
+import ModalAdocao from './components/modalAdocao'
 import { dicas } from './data/dicas'
-import { animais } from './data/animais'
-import type { Filtro } from './data/tipos'
+import { useAnimais } from './hooks/useAnimais'
+import type { Animal, Filtro } from './data/tipos'
 
 function App() {
   const [filtro, setFiltro] = useState<Filtro>('todos')
   const [escuro, setEscuro] = useState(false)
+  const [animalSelecionado, setAnimalSelecionado] = useState<Animal | null>(null)
+  const { animais, carregando, erro } = useAnimais()
 
   const animaisVisiveis =
     filtro === 'todos'
@@ -42,13 +45,42 @@ function App() {
             aoMudar={setFiltro}
             quantidade={animaisVisiveis.length}
           />
-          <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {animaisVisiveis.map((animal) => (
-              <CartaoAnimal key={animal.id} animal={animal} />
-            ))}
-          </div>
+
+          {carregando && (
+            <p className="mt-6 rounded-lg border border-purple-200 bg-purple-50 p-4 text-center text-sm dark:border-purple-800 dark:bg-purple-950">
+              Carregando animais...
+            </p>
+          )}
+
+          {erro && (
+            <p
+              role="alert"
+              className="mt-6 rounded-lg border border-red-300 bg-red-50 p-4 text-center text-sm text-red-800 dark:border-red-800 dark:bg-red-950 dark:text-red-200"
+            >
+              {erro}
+            </p>
+          )}
+
+          {!carregando && !erro && (
+            <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {animaisVisiveis.map((animal) => (
+                <CartaoAnimal
+                  key={animal.id}
+                  animal={animal}
+                  aoAdotar={setAnimalSelecionado}
+                />
+              ))}
+            </div>
+          )}
         </section>
       </main>
+
+      {animalSelecionado && (
+        <ModalAdocao
+          animal={animalSelecionado}
+          aoFechar={() => setAnimalSelecionado(null)}
+        />
+      )}
 
       <Rodape />
     </div>

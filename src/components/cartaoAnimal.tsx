@@ -2,9 +2,10 @@ import type { Animal } from '../data/tipos'
 
 type Props = {
   animal: Animal
+  aoAdotar: (animal: Animal) => void
 }
 
-function CartaoAnimal({ animal }: Props) {
+function CartaoAnimal({ animal, aoAdotar }: Props) {
   return (
     <article className="flex flex-col rounded-xl border border-purple-200 bg-purple-50 p-4 dark:border-purple-800 dark:bg-purple-950">
       <img
@@ -16,7 +17,10 @@ function CartaoAnimal({ animal }: Props) {
       <p className="flex-1 text-sm text-gray-700 dark:text-gray-300">{animal.descricao}</p>
       <div className="mt-3 flex items-center justify-between">
         <span className="text-sm">{animal.idade}</span>
-        <button className="rounded-full border border-purple-400 px-4 py-1 text-sm transition-colors duration-200 hover:bg-purple-200 dark:hover:bg-purple-800">
+        <button
+          onClick={() => aoAdotar(animal)}
+          className="rounded-full border border-purple-400 px-4 py-1 text-sm transition-colors duration-200 hover:bg-purple-200 dark:hover:bg-purple-800"
+        >
           Adotar
         </button>
       </div>
